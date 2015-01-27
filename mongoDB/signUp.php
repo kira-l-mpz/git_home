@@ -26,6 +26,25 @@
         </form> <br />
     </div>
     
+    <div id="dv1">
+        <p onclick="tgglView()">
+            C<br />O<br />N<br />T<br />A<br />C<br />T<br /><br />U<br />S<br />
+        </p>
+    </div>
+    
+    <div id="dv2">
+        <p>
+            <a href="">FAQ</a><hr /><br />
+            <a href="">Founder</a><hr /><br />
+            <a href="">About Us</a><hr /><br />
+            <a href="">Contact Us</a><hr /><br />
+        </p>
+    </div>
+    
+    <div id="dv3">
+        <button onclick="tgglView()">Hide</button>
+    </div>
+    
 </body>
     
 </html>

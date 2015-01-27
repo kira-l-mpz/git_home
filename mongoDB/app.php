@@ -86,6 +86,23 @@
         <div id="output">waiting for action</div>
     </div>
     
+    <div id="dv1">
+        <img src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/10/firefox-wallpaper-2.png" onclick="tgglView()" height="400px" width="150px" />
+    </div>
+    
+    <div id="dv2">
+        <p>
+            <a href="">FAQ</a><hr /><br />
+            <a href="">Founder</a><hr /><br />
+            <a href="">About Us</a><hr /><br />
+            <a href="">Contact Us</a><hr /><br />
+        </p>
+    </div>
+    
+    <div id="dv3">
+        <button onclick="tgglView()">Show</button>
+    </div>
+    
 </body>
     
 </html>

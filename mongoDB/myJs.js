@@ -1,3 +1,22 @@
+flagg = 0;
+x1 = 100;
+x2 = -500;
+y1 = 100;
+y2 = -500;
+
+function tgglView() {
+    var ele1 = document.getElementById('dv1');
+    var ele2 = document.getElementById('dv2');
+
+    if (ele2.style.visibility == "hidden") {
+        ele1.style.visibility = "hidden";
+        ele2.style.visibility = "visible";    
+    } else {
+        ele1.style.visibility = "visible";
+        ele2.style.visibility = "hidden";
+    }
+}
+
 function validate() {
     var ky = document.getElementById('ky1').value;
     

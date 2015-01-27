@@ -36,3 +36,35 @@ button {
     font-family: cursive;
     border-radius: 15px;
 }
+
+#dv1 {
+    position: absolute;
+    left: 10px;
+    top: 100px;
+    width: 150px;
+    height: 400px;
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: 900;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#dv2 {
+    position: absolute;
+    left: 5px;
+    top: 100px;
+    width: 150px;
+    height: 400px;
+    color: #ff0000;
+    z-index: 1;
+    font-family: "Times New Roman";
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#dv3 {
+    position: absolute;
+    left: 5px;
+    top: 520px;
+}
