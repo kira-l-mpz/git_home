@@ -12,8 +12,8 @@
     <p class="line">A meticulate way to manage money</p>
     
     <div id="layout">
-        <h1> Guest : Money Management Machine</h1> <hr /><hr /><br />
-        <form name='frm1' method="post" action="app.php" onsubmit="return validate();">
+        <h1>New User? Sign Up</h1>
+        <form name='frm1' method="post" action="signUpProcessor.php" onsubmit="return validate()">
             <table>
                 <tr>
                     <td>Username </td><td><input type="text" name='usr1' /></td>
@@ -22,10 +22,8 @@
                     <td>Key Pin </td><td><input type="password" id="ky1" name="ky1" /></td>
                 </tr>
             </table>
-            <input type="submit" value="Login" />
+            <input type="submit" value="SignUp" />
         </form> <br />
-        New User? <a href="signUp.php">Sign Up </a><br />
-        <a href=""> Forgot Password</a>
     </div>
     
 </body>

@@ -25,23 +25,29 @@
                 
                 $result = $userData -> findOne(array('user_name' => $name));
                 $flag = 0;
+                $printed = 0;
                 
                 if ($result == null) {
                     echo "Guest";
+                    $printed = 1;
                 } else {
                     foreach ($result as $item) {
-                        if ($flag > 0) {
-                            if (strcmp($ky, $name) == 0) {
-                                $flag = 0;
+                        if ($flag > 1) {
+                            if (strcmp($ky, $item) == 0) {
+                                $flag = 3;
                             }
                             break;
                         } else {
-                            $flag = 1;
+                            $flag = $flag + 1;
                         }
                     }
                 }
-                if ($flag == 0) {
+                if ($flag == 3) {
                     echo $name;
+                } else {
+                    if ($printed == 0) {
+                        echo "Guest";
+                    }
                 }
             } else {
                 echo "Guest";
