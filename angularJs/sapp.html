@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<!-- important notes:
+        1. If you want to make your AngularJs application HTML5 valid use data-ng- instead of 
+           just ng-.
+        2. angular.copy(varName) is used for putting data from one object to another object.
+        3. <form novalidate> is used to override default HTML5 validation.
+-->
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body ng-app="" ng-controller="todoCtrl">
+    <h2>ToDo List</h2>
+    
+    <form ng-submit="todoAdd()">
+        <input type="text" ng-model="todoInput" size="50" placeholder="Add New " />
+        <input type="submit" value="Add New" />
+    </form> <br />
+    
+    <div ng-repeat="x in todoList">
+        <input type="checkbox" ng-model="x.done" />
+        <span ng-bind="x.todoText"></span>
+    </div>
+    
+    <p>
+        <button ng-click="remove()">Remove marked</button> <br />
+        <button ng-click="toggleAll()">Toggle all</button>
+    </p>
+    
+    <p><h2>Filter for Tasks</h2>
+        <input type="text" ng-model="ifilter" placeholder="Search " />
+    
+        <ul>
+            <li ng-repeat="x in todoList | filter : ifilter">
+                {{ x.todoText }}
+            </li>
+        </ul>
+    
+    </p>
+    
+    <script src="todoList.js"> </script>
+
+</body>
+    
+</html>
+
+<!-- Reference: w3schools.com -->

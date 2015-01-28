@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<!-- important notes:
+        1. If you want to make your AngularJs application HTML5 valid use data-ng- instead of 
+           just ng-.
+        2. angular.copy(varName) is used for putting data from one object to another object.
+        3. <form novalidate> is used to override default HTML5 validation.
+-->
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+<!-- ng-app="" says that the following div tag is the owner of the AngularJs Application-->
+<!-- ng-init="..." is used for initializing the variables for application -->
+<!-- ng-controller is like a contructor -->
+<!-- serial is an object with fields name, main -->
+<!-- points is an array -->
+<div ng-app="" ng-init="firstName='John'; cost=10001; serial={name: 'POI', main: 'Reece'}; points=[3001, 2002, 1023, 4024, 5005];optn='true'" ng-controller="personController">    
+    <p>Input something in the input box:</p>
+    <!-- ng-model binds the value of html input text to application variable name -->
+    <p>Name: <input type="text" ng-model="name" value="John" /></p>
+    <!-- ng-bind binds the application variable to html view element (innerHTML) <p> -->
+    <p ng-bind="name"></p>
+    
+    <!-- Usage of firstName variable defined in ng-init -->
+    <p>The name initialized in ng-init <span ng-bind="firstName + ' ' + cost"></span></p>
+    
+    <!-- Expressions are used to bind data to html without using ng-bind -->
+    <p>An Expression 5 + 5 = {{ 5 + 5}}</p>
+    
+    <!-- Demonstrating ng-controller -->
+    <p>Printed using expression : {{anime + " " + hero}}</p>
+    <p>Printed using ng-bind : <span ng-bind="anime"></span> <span ng-bind="hero"></span></p>
+
+    <!-- Demonstrating an array -->
+    <p>Array usage : {{points[2]}}</p>
+
+    <!-- Accessing value of the variables of the object -->
+    <p ng-bind="'Mr. ' + serial.main + ' in ' + serial.name"></p>
+    
+    <!-- ng-repeat is used for looping -->
+    <p>Looping demonstration on an array : 
+        <ul>
+            <li ng-repeat="x in points">
+                {{ x }} 
+            </li>
+        </ul>
+    </p>
+    
+    <!-- Demonstrating methods defined inside controller -->
+    <p ng-bind="description()"></p>
+    
+    <!-- Filter for sorting an array, | character is used as filter -->
+    <p>
+        <ul>
+            <li ng-repeat="x in points | orderBy: ssorter">
+                {{ x }}
+            </li>
+        </ul>
+    </p>
+    
+    <!-- Demo of how input to the text field can be used to filter out an array -->
+    <p>Enter a single digit number : <input type="text" ng-model="ifilter" /></p>
+    <p>
+        <ul>
+            <li ng-repeat="x in points | filter : ifilter | orderBy : ssorter">
+                {{ x }}
+            </li>
+        </ul>
+    </p>
+
+    <!-- Inside personController a function is defined for reading data from a site. 
+         The data is in JSON format. Below is demonstration of showing that data -->
+    <p id="prgrph01">
+        Enter something to search : <input type="text" ng-model="i2filter" /><br />
+        <ul>
+            <li ng-repeat="x in cus_names | filter : i2filter">
+                {{ x.Name + ", " + x.Country }}
+            </li>
+        </ul>
+    </p>
+
+    <!-- Demonstrating ng-disabled, used in places where accept the agreement, only after
+         that you can click a button. 
+         PS: Showing ng-show which is used to hide or show the elements depending on whe-
+         ther the value is true or false -->
+    <!-- NWP #01 -->
+    <!-- NWP #01 -->
+    <!-- NWP #01 -->
+    <p>
+        <input type="checkbox" ng-model="optn" /> Wanna use option<br />
+        <button ng-disabled="! optn">Click</button>
+        <p ng-show="optn">Paragraph 1</p>
+        <p ng-show="! optn">Paragraph 2</p>
+    </p>
+
+    <!-- Demonstrating counter using ng-click (event handler) -->
+    <p>
+        <button ng-click="count = count + 1">Add One</button><br />
+        {{ count }}
+    </p>
+</div>
+    
+<script src="personController.js">
+    
+</script>
+    
+</body>
+
+</html>
